@@ -1,16 +1,32 @@
 import React, { Component } from 'react'
+import youtubeAPI from '../api/youtubeApi'
 import SearchBar from './SearchBar'
 import SearchResults from './SearchResults'
 
 
 class App extends Component {
 
+    state = {
+        results: []
+    }
+
+
+    onSearchSubmit = async (query) => {
+        const results = await youtubeAPI.get('', {
+            params: { query: query }
+        })
+        this.setState({
+            results: results
+        })
+    }
 
     render(){
         return (
-            <div>
+            <div className="ui container" >
                 <h1>Search The Youtube API!</h1>
-                <SearchBar />
+                <SearchBar
+                    onSearchSubmit={this.onSearchSubmit}
+                />
                 <SearchResults />
             </div>
         )
