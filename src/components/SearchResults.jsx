@@ -1,11 +1,14 @@
 import React from 'react'
+import SearchResult from './SearchResult'
 
 
-const SearchResults = () => {
+const SearchResults = ({ results }) => {
 
         return (
             <div>
-                I am the Search results component
+                {results.map((result)=> (
+                    <SearchResult result={result} />
+                ))}
             </div>
         )
 }

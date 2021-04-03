@@ -27,7 +27,9 @@ class App extends Component {
                 <SearchBar
                     onSearchSubmit={this.onSearchSubmit}
                 />
-                <SearchResults />
+                <SearchResults
+                    results={this.state.results}
+                />
             </div>
         )
     }
