@@ -8,6 +8,7 @@ const SearchResults = ({ results, onResultSelection }) => {
             <div className="ui relaxed divided list" >
                 {results.map((result)=> (
                     <SearchResult 
+                    key={result.id.videoId}
                     result={result}
                     onResultSelection={onResultSelection}
                     />
