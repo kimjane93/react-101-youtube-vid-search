@@ -17,10 +17,9 @@ class SearchBar extends Component {
   };
 
   render() {
-    console.log(this.state.query);
     return (
       <div className="search-bar ui segment">
-        <form className="ui form">
+        <form onSubmit={this.onFormSubmit}  className="ui form">
           <div className="field">
             <label htmlFor="search-input">Search Video Titles</label>
             <input

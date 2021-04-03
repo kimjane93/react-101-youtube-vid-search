@@ -12,11 +12,11 @@ class App extends Component {
 
 
     onSearchSubmit = async (query) => {
-        const results = await youtubeAPI.get('', {
-            params: { query: query }
+        const results = await youtubeAPI.get('/search', {
+            params: { q: query }
         })
         this.setState({
-            results: results
+            results: results.data.items
         })
     }
 
