@@ -9,7 +9,7 @@ class App extends Component {
     render(){
         return (
             <div>
-                I am the app component
+                <h1>Search The Youtube API!</h1>
                 <SearchBar />
                 <SearchResults />
             </div>

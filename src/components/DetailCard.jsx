@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const VideoCard = () => {
+const DetailCard = () => {
 
         return (
             <div>
@@ -11,4 +11,4 @@ const VideoCard = () => {
 }
 
 
-export default VideoCard
+export default DetailCard
