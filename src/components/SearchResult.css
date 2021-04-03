@@ -1,0 +1,9 @@
+.search-result {
+    display: flex !important;
+    align-items: center !important;
+    cursor: pointer
+}
+
+.search-result.item img {
+    max-width: 180px;
+}

@@ -1,15 +1,24 @@
 import React, { Component } from 'react'
+import './App.css'
 import youtubeAPI from '../api/youtubeApi'
 import SearchBar from './SearchBar'
 import SearchResults from './SearchResults'
+import DetailCard from './DetailCard'
 
 
 class App extends Component {
 
     state = {
-        results: []
+        results: [],
+        selectedResult: null
     }
 
+
+    onResultSelection = (result) => {
+        this.setState({
+            selectedResult: result
+        })
+    }
 
     onSearchSubmit = async (query) => {
         const results = await youtubeAPI.get('/search', {
@@ -27,8 +36,12 @@ class App extends Component {
                 <SearchBar
                     onSearchSubmit={this.onSearchSubmit}
                 />
+                <DetailCard 
+                    result={this.state.selectedResult}
+                />
                 <SearchResults
                     results={this.state.results}
+                    onResultSelection={this.onResultSelection}
                 />
             </div>
         )
